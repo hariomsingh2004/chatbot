@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#34075e">
+<title>chatbot</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<section class="container">
+<nav class="nav">
+ <span class="fa fa-arrow-left arrow"></span>
+ <div class="profile" >
+  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fbot-icon&psig=AOvVaw3f7JYYxjzGJbET1u-HHt8U&ust=1682965953483000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJCUgYCf0v4CFQAAAAAdAAAAABAD">
+ </div>
+ <div class="name">
+ <p id="nam">Hari om singh...</p>
+ <p id="online" ><span></span>online</p>
+ </div>
+ <div class="tools" >
+  <a href="#" ><i class="fa fa-ellipsis-v" ></i></a>
+ </div>
+</nav>
+<!-- nav end -->
+<div class="chat-wrapper" >
+<ul class="chat-list" id="list">
+</ul>
+<div class="input">
+ <input type="text" placeholder="Type a message" class="msg" id="msg"/>
+ <button type="button" class="send-btn" id="send"><i class="fa fa-send"></i></button>
+</div>
+</section>
+<!-- script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+alert('this is a simple chat bot used to show you  how it really works in real life..');
+
+let input;
+let r = 'r';
+let s = 's';
+
+const name = ['Knightmare'];
+const imgs = ['https://singularityhub.com/wp-content/uploads/2019/02/Ai-startups-tech-Peter-Rejceck-shutterstock-1290615073-1068x601.jpg'];
+
+(function(){
+ let i = rand(name.length);
+ $('#nam').text(name[i]);
+ $('.profile img').attr('src',imgs[i]);
+})();
+
+
+const msg = [
+'hello' , //0 
+'hi' , //1
+'who are you' , //2
+'what is your name' , //3
+'how are you' , //4
+'how r u' , //5
+'what are you doing' , //6
+'what can you do' , //7
+'can you talk to me' , //8
+'who invented you' , //9
+'tell me something' , //10
+'what is your favourite movie' , //11
+'which movie do you like' , //12
+'what is your gender' , //13
+'are you boy or girl' , //14
+'tell me a joke' , //15
+'tell me a story' , //16
+'what do you like' , //17
+'what do you think about me' , //18
+'do you want to play a game with me' , //19
+'can you play a game' , //20
+'bye' ,//21
+'bye bye' , //22
+'are you smart' , //23
+'can you understand my feelings' , //24
+'will you help me' , //25
+'can you help me' , //26
+'will you destroy humans' , //27
+'can you harm us' , //28
+'can you give me your source code' , //29
+'give me your source code' , //30
+'you are dumb' , //31
+'i dont like you' , //32
+'talk to me' ,//33
+'chat with me' , //34
+'do you tell a lie' , //35
+'can you lie to me' , //36
+'you are good' , //37
+'i like you' , //38
+'who created you' , //39
+'who is your creator' , //40
+'thanks' , //41
+'thank you' , //42
+'are you serious' ,  //43
+'seriously' , //44
+'are you a human' , //45
+'can you do physical activities' , //46
+'what are you' , //47
+'are you an ai' , //48
+'can you sense the world around you' , //49
+'do you have sensors' , //50
+];
+const reply = [ 'you say','What are you doing',
+ '😂😂😂🤣🤣','😘😘😍',
+ 'why are you sad',
+ 'tell me something about yourself','how are you',
+ 'mister programmer',
+ 'what is your favorite language','😁😁😂',
+];
+const cus = [
+ 'hello', //0,2
+ 'I am Chatbot', //1
+ 'I am pretty good', //2
+ "Chatiing", //3
+ "you are prince / princess 🥰😇 i can talk to you", //4
+ "Avnengers is my favourite movie",
+ "studying", // 6
+ "you to 🥰 <br> Thank you!!",
+ "i'm a Chatbot 🤖 ",//10
+ "created by Hari om singh", //39
+ "she is a very talented girl",
+ "okay 😅<br> I'm sorry", //11
+ "Home 🏘️",'welcome', //13
+ "same to you",
+ 
+];
+const els = [
+ "i Don't understand 🤔",'ok',
+ 'okay',"i Don't understand 🤐",
+ 'tell me about your browsing behaviour' , 'what do you like in me' ,
+ 'hmm','yeaa!!','achhha','😂😂',
+ 
+ "i Don't understand 😑",'ok','😍😍😍',
+ 
+ "i Don't understand",'😎😉😘',
+ 'hehe','😃🤣😋','nooo',
+ 'aur sab thik thak' , 'how are you' , 'i like your way of talking' ,
+ 
+ '😜😜😝😝😜','hello','no',
+ "i Don't understand",
+ ];
+
+
+
+function rand(len){
+ let num = Math.floor(Math.random()*len);
+ return num;
+}
+
+
+/* jQuery function  */
+$(document).ready(function(){
+  
+  
+ $('#send').click(function(){
+  input = $('#msg').val();
+  if(input != ''){
+   $('#list').append('<li class="s"><p>'+input+'<span>'+getTime()+'</span></p></li>');
+    replys(input);
+ // $('#msg').val('');
+  }   
+ });
+ 
+ /* reply function */
+ 
+ function replys(input){
+ let txt = input.toLowerCase();
+ let out = '';
+ $('#online').html('typing...');
+  if(msg.includes(txt)){
+  
+    if(msg[9]==txt || msg[10]==txt ){
+       out = reply[rand(reply.length)];
+       sendmsg(msg[0]);
+    }else if(msg[0]==txt || msg[1]==txt){
+     out = cus[0];
+    }else if(msg[2]==txt || msg[3]==txt){
+    out = cus[1];
+    }else if(msg[39]==txt || msg[39]==txt){
+    out = cus[2];
+    }else if(msg[6]==txt || msg[7]==txt){
+    out = cus[3];
+    }else if(msg[8]==txt || msg[9]==txt){
+    out = cus[4];
+    }else if(msg[11]==txt || msg[12]==txt){
+    out = cus[5];
+     out = els[rand(els.length)];
+     if(out.match("i Don't understand")){
+     out = "okay";
+     }
+    }else if(msg[10]==txt || msg[32]==txt){
+    out = msg[35];
+    }else if(msg[11]==txt ){
+    out = cus[2];
+    }else if(msg[13]==txt){
+    out = cus[3];
+    }else if(msg[14]==txt){
+    out = cus[4];
+    }else if(msg[15]==txt){
+    out = cus[5];
+    }else if(msg[16]==txt){
+    out = cus[6];
+    }else if(msg[17]==txt || msg[18]==txt){
+    out = msg[17];
+    }else if(msg[19]==txt || msg[20]==txt ||msg[21]==txt){
+    out = cus[7];
+    }else if(msg[23]==txt || msg[24]==txt){    
+    sendmsg(cus[8]);
+    out = cus[9];
+    }else if(msg[25]==txt){
+    out = cus[10];
+    }else if(msg[26]==txt){
+    out = cus[11];
+    }else if(msg[27]==txt || msg[28]==txt ||msg[21]==txt){
+    out = cus[12];
+    }else if(msg[29]==txt || msg[30]==txt || msg[31]==txt || msg[33]== txt){
+    out = els[rand(els.length)];
+    if(out.match("i Don't understand")){
+    out = "okay";
+     }
+    }else if(msg[34]==txt || msg[35]==txt){
+    out = cus[2];
+    }else if(msg[36]==txt || msg[37]==txt){
+    out = els[rand(els.length)];
+    if(out.match("i Don't understand")){
+    out = "okay";
+     }
+    }else if(msg[38]==txt){
+    out = msg[39];
+    }else if(msg[39]==txt){
+    out = cus[13];
+    }else if(msg[40]==txt || msg[41]==txt || msg[42]==txt){
+    out = msg[41];
+    }else if(msg[43]==txt){
+    out = cus[14];
+    }else if(msg[44]==txt || msg[45]==txt){
+    out = cus[15];
+    }else if(msg[48]==txt || msg[49]==txt){
+    out = msg[49];
+    }else if(msg[50]==txt || msg[51]==txt){
+    out = msg[51];
+    }
+    else{
+     out = els[rand(els.length)];
+     if(out.match("i Don't understand")){
+      out = "okay";
+     }
+    }
+    
+  }else{
+   out = els[rand(els.length)];
+  }
+  sendmsg(out);
+  $('#msg').val('');
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ /* send message */
+ 
+ function sendmsg(msg){
+ setTimeout(function(){
+ $('#list').append('<li class="r"><p>'+msg+'<span>'+getTime()+'</span></p></li>');
+ },1000);
+ setTimeout(function(){
+ $('#online').html('<span></span>online');
+ },1500);
+ }
+});
+
+
+/* time function*/
+function getTime(){
+let date = new Date();
+let minute = date.getMinutes();
+let hours = date.getHours();
+let aa,hour;
+
+if(hours <= 12){
+ aa = 'AM';
+ hour = hours;
+}else{
+ aa = 'PM';
+ hour = hours - 12;
+}
+let out = hour+':'+minute+' '+aa; 
+return out;
+}
+</script>
+</body>
+</html>

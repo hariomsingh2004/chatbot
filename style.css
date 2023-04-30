@@ -1,0 +1,160 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+    body {
+    font-family:sans-serif;
+    font-size:16px;
+    --primary:#11d389;
+    }
+    img{
+    width:100%;
+    }
+    .container {
+    position:relative;
+    width:100%;
+    max-width:100%;
+    margin:auto;
+    }
+    .nav {
+    position:sticky;
+    top:0;
+    left:0;
+    width:100%;
+    height:56px;
+    background:var(--primary);
+    box-shadow:0 0px 3px 2px rgba(0,0,0,0.2);
+    padding:0 10px;
+    display:flex;
+    align-items: center;
+    z-index:9;
+    }
+    .arrow{
+     display:inline-block;
+     color:rgb(#fff);
+     font-size:24px;
+     width:20px;
+     cursor:pointer;
+    }
+    .nav .profile {
+     height:40px;
+     width:40px;
+     border-radius:50%;
+     overflow:hidden;
+     margin-left:10px;
+     cursor:pointer;
+    }
+    .profile:hover {
+    }
+    .nav .name {
+    margin-left:10px;
+    cursor:pointer;
+    }
+    .name p{
+     color:rgb(#fff);
+     line-height:1.1em;
+    }
+    .name p > span{
+     display:inline-block;
+     height:10px;
+     width:10px;
+     border-radius:50%;
+     background:#00ff00;
+     margin-right:5px;
+    }
+    .tools {
+     flex:1;
+     text-align:right;
+    }
+    .tools a{
+    display:inline-block;
+    color:#fff;
+    font-size:25px;
+    padding:5px;
+    margin:0 5px;
+    }
+    
+    .chat-wrapper {
+     position:fixed;
+     width:100%;
+     height:98vh;
+     background:linear-gradient(177deg, rgba(191, 191, 191, 0.03) 0%, rgba(191, 191, 191, 0.03) 12.5%,rgba(92, 92, 92, 0.03) 12.5%, rgba(92, 92, 92, 0.03) 25%,rgba(19, 19, 19, 0.03) 25%, rgba(19, 19, 19, 0.03) 37.5%,rgba(89, 89, 89, 0.03) 37.5%, rgba(89, 89, 89, 0.03) 50%,rgba(69, 69, 69, 0.03) 50%, rgba(69, 69, 69, 0.03) 62.5%,rgba(93, 93, 93, 0.03) 62.5%, rgba(93, 93, 93, 0.03) 75%,rgba(209, 209, 209, 0.03) 75%, rgba(209, 209, 209, 0.03) 87.5%,rgba(229, 229, 229, 0.03) 87.5%, rgba(229, 229, 229, 0.03) 100%),linear-gradient(151deg, rgba(121, 121, 121, 0.02) 0%, rgba(121, 121, 121, 0.02) 25%,rgba(230, 230, 230, 0.02) 25%, rgba(230, 230, 230, 0.02) 50%,rgba(31, 31, 31, 0.02) 50%, rgba(31, 31, 31, 0.02) 75%,rgba(166, 166, 166, 0.02) 75%, rgba(166, 166, 166, 0.02) 100%),linear-gradient(129deg, rgba(132, 132, 132, 0.01) 0%, rgba(132, 132, 132, 0.01) 25%,rgba(115, 115, 115, 0.01) 25%, rgba(115, 115, 115, 0.01) 50%,rgba(145, 145, 145, 0.01) 50%, rgba(145, 145, 145, 0.01) 75%,rgba(250, 250, 250, 0.01) 75%, rgba(250, 250, 250, 0.01) 100%),linear-gradient(112deg, rgba(121, 121, 121, 0.03) 0%, rgba(121, 121, 121, 0.03) 14.286%,rgba(124, 124, 124, 0.03) 14.286%, rgba(124, 124, 124, 0.03) 28.572%,rgba(188, 188, 188, 0.03) 28.572%, rgba(188, 188, 188, 0.03) 42.858%,rgba(23, 23, 23, 0.03) 42.858%, rgba(23, 23, 23, 0.03) 57.144%,rgba(56, 56, 56, 0.03) 57.144%, rgba(56, 56, 56, 0.03) 71.42999999999999%,rgba(141, 141, 141, 0.03) 71.43%, rgba(141, 141, 141, 0.03) 85.71600000000001%,rgba(170, 170, 170, 0.03) 85.716%, rgba(170, 170, 170, 0.03) 100.002%),linear-gradient(122deg, rgba(156, 156, 156, 0.02) 0%, rgba(156, 156, 156, 0.02) 25%,rgba(146, 146, 146, 0.02) 25%, rgba(146, 146, 146, 0.02) 50%,rgba(118, 118, 118, 0.02) 50%, rgba(118, 118, 118, 0.02) 75%,rgba(81, 81, 81, 0.02) 75%, rgba(81, 81, 81, 0.02) 100%),linear-gradient(221deg, rgba(223, 223, 223, 0.02) 0%, rgba(223, 223, 223, 0.02) 12.5%,rgba(163, 163, 163, 0.02) 12.5%, rgba(163, 163, 163, 0.02) 25%,rgba(250, 250, 250, 0.02) 25%, rgba(250, 250, 250, 0.02) 37.5%,rgba(32, 32, 32, 0.02) 37.5%, rgba(32, 32, 32, 0.02) 50%,rgba(78, 78, 78, 0.02) 50%, rgba(78, 78, 78, 0.02) 62.5%,rgba(8, 8, 8, 0.02) 62.5%, rgba(8, 8, 8, 0.02) 75%,rgba(235, 235, 235, 0.02) 75%, rgba(235, 235, 235, 0.02) 87.5%,rgba(100, 100, 100, 0.02) 87.5%, rgba(100, 100, 100, 0.02) 100%),linear-gradient(103deg, rgba(153, 153, 153, 0.03) 0%, rgba(153, 153, 153, 0.03) 12.5%,rgba(190, 190, 190, 0.03) 12.5%, rgba(190, 190, 190, 0.03) 25%,rgba(234, 234, 234, 0.03) 25%, rgba(234, 234, 234, 0.03) 37.5%,rgba(149, 149, 149, 0.03) 37.5%, rgba(149, 149, 149, 0.03) 50%,rgba(167, 167, 167, 0.03) 50%, rgba(167, 167, 167, 0.03) 62.5%,rgba(106, 106, 106, 0.03) 62.5%, rgba(106, 106, 106, 0.03) 75%,rgba(55, 55, 55, 0.03) 75%, rgba(55, 55, 55, 0.03) 87.5%,rgba(106, 106, 106, 0.03) 87.5%, rgba(106, 106, 106, 0.03) 100%),linear-gradient(272deg, rgba(211, 211, 211, 0.03) 0%, rgba(211, 211, 211, 0.03) 16.667%,rgba(14, 14, 14, 0.03) 16.667%, rgba(14, 14, 14, 0.03) 33.334%,rgba(132, 132, 132, 0.03) 33.334%, rgba(132, 132, 132, 0.03) 50.001000000000005%,rgba(60, 60, 60, 0.03) 50.001%, rgba(60, 60, 60, 0.03) 66.668%,rgba(22, 22, 22, 0.03) 66.668%, rgba(22, 22, 22, 0.03) 83.33500000000001%,rgba(230, 230, 230, 0.03) 83.335%, rgba(230, 230, 230, 0.03) 100.002%),linear-gradient(343deg, rgba(209, 209, 209, 0.03) 0%, rgba(209, 209, 209, 0.03) 12.5%,rgba(6, 6, 6, 0.03) 12.5%, rgba(6, 6, 6, 0.03) 25%,rgba(27, 27, 27, 0.03) 25%, rgba(27, 27, 27, 0.03) 37.5%,rgba(78, 78, 78, 0.03) 37.5%, rgba(78, 78, 78, 0.03) 50%,rgba(137, 137, 137, 0.03) 50%, rgba(137, 137, 137, 0.03) 62.5%,rgba(158, 158, 158, 0.03) 62.5%, rgba(158, 158, 158, 0.03) 75%,rgba(100, 100, 100, 0.03) 75%, rgba(100, 100, 100, 0.03) 87.5%,rgba(97, 97, 97, 0.03) 87.5%, rgba(97, 97, 97, 0.03) 100%),linear-gradient(90deg, hsl(151,0%,88%),hsl(151,0%,88%));
+    
+    }
+    .chat-list {
+     position:absolute;
+     width:100%;
+     height:100%;
+     padding:0 1em;
+     list-style:none;
+     overflow:scroll;
+    }
+    .chat-list li{
+     width:200px;
+     margin-top:20px;
+     margin-bottom:20px;
+     cursor:pointer;
+    }
+    .chat-list li:last-child {
+     margin-bottom:200px;
+     
+    }
+    .chat-list .r p{
+     display:inline-block;
+     background:#fff;
+     padding:6px 10px;
+     border-radius:4px;
+     text-transform:capitalize;
+    }
+    .chat-list .s{
+    display:flex;
+    justify-content:flex-end;
+    margin-left:auto;
+    }
+    .chat-list .s p{
+    display:inline-block;
+    background:#E1ffc7;
+    padding:6px 10px;
+    border-radius:4px;
+    }
+    .chat-list li p > span {
+     color:#777;
+     font-size:10px;
+     font-weight:400;
+     vertical-align:bottom;
+     padding-left:3px;
+    }
+    .input {
+     position:fixed;
+     bottom:0;
+     width:100%;
+     background:rgba(0,0,0,0.2);
+     display:flex;
+     padding:5px 8px;
+    }
+    .msg {
+     flex:1;
+     margin-right:5px;
+     border:none;
+     outline:none;
+     border-radius:40px;
+     padding:0 20px;
+     caret-color:var(--primary);
+     font-size:18px;
+    }
+    .send-btn{
+     display:inline-block;
+     height:45px;
+     width:45px;
+     border-radius:50%;
+     border:none;
+     outline:none;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     font-size:20px;
+     color:#fff;
+     background:var(--primary);
+     cursor:pointer;
+    }
